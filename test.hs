@@ -1,3 +1,6 @@
+-- Just a set of notes and practice using examples
+-- taken from Learn You a Haskell
+
 -- Basic Function definition
 doubleMe x = x + x
 
@@ -42,3 +45,18 @@ haha = take 12 (cycle "LOL ")
 -- List Comprehension
 evenToTwenty = [x*2 | x <- [1..10]]
 comprehensionCondition = [ x | x <- [50..100], x `mod` 7 == 3]
+vectorMult = [ x*y | x <- [2,5,10], y <- [8,10,11]]
+nouns = ["hobo", "frog", "pope"]
+adjectives = ["lazy", "grouchy", "scheming"]
+descriptions = [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
+
+-- Tuples
+-- fst (8, 11) grabs the first element
+-- snd (8, 11) grabs the second component
+-- fst && snd only work for two element tuples
+numsAndNumWords = zip [1 .. 5] ["one", "two", "three", "four", "five"]
+-- zip works against jagged lists too. Stopping at the shorter list length
+
+-- Using list comprehenstions and tuples together
+-- Find all right triangles where the sides are ints && smaller than 10 && perimeter == 24
+rightTriangles' = [ (a,b,c) | c <- [1..10], b <- [1..c], a <- [1..b], a^2 + b^2 == c^2, a+b+c == 24]
