@@ -1,6 +1,10 @@
 -- Just a set of notes and practice using examples
 -- taken from Learn You a Haskell
 
+-----------------------------
+-- Starting Out -------------
+-----------------------------
+
 -- Basic Function definition
 doubleMe x = x + x
 
@@ -60,3 +64,15 @@ numsAndNumWords = zip [1 .. 5] ["one", "two", "three", "four", "five"]
 -- Using list comprehenstions and tuples together
 -- Find all right triangles where the sides are ints && smaller than 10 && perimeter == 24
 rightTriangles' = [ (a,b,c) | c <- [1..10], b <- [1..c], a <- [1..b], a^2 + b^2 == c^2, a+b+c == 24]
+
+
+-----------------------------
+-- Types and TypeClasses-----
+-----------------------------
+
+-- Haskel has a static type system and infers types
+-- Type errors such as dividing int by bool should be caught at compile time
+
+-- Explicit Function Type Declaration
+removeNonUppercase :: [Char] -> [Char]
+removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
